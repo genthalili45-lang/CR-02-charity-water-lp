@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#FF902A"/><stop offset="1" stop-color="#e07a1c"/>
+</linearGradient>
+</defs>
+<rect width="320" height="280" fill="url(#sky)"/>
+
+<g transform="translate(160,150)">
+  <path d="M0,-20 L70,-34 L70,40 L0,54 Z" fill="#ffffff"/>
+  <path d="M0,-20 L-70,-34 L-70,40 L0,54 Z" fill="#e9eff5"/>
+  <path d="M0,-20 L0,54" stroke="#2E9DF7" stroke-width="4"/>
+  <rect x="-58" y="-18" width="40" height="5" rx="2" fill="#bcd3e6"/>
+  <rect x="-58" y="-4" width="46" height="5" rx="2" fill="#bcd3e6"/>
+  <rect x="18" y="-22" width="40" height="5" rx="2" fill="#bcd3e6"/>
+</g>
+<rect x="60" y="208" width="150" height="12" rx="6" fill="#FFC907" transform="rotate(-8 60 208)"/>
+<path d="M205,196 l16,2 l-10,12 z" fill="#FF902A" transform="rotate(-8 205 196)"/>
+<path transform="translate(265,70) scale(0.9)" d="M0,-26 C16,-6 22,2 22,12 A22,22 0 1 1 -22,12 C-22,2 -16,-6 0,-26 Z" fill="#ffffff" opacity="0.85"/>
+
+</svg>

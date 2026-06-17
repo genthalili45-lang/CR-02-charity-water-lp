@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#2E9DF7"/><stop offset="1" stop-color="#2e9df7"/>
+</linearGradient>
+</defs>
+<rect width="640" height="512" fill="url(#sky)"/>
+
+<rect x="0" y="0" width="640" height="512" fill="url(#sky)"/>
+<rect x="0" y="360" width="640" height="152" fill="#8BD1CB"/>
+<g transform="translate(560,80)"><rect x="-3" y="-52" width="6" height="12" rx="3" fill="#FFC907" transform="rotate(0)"/><rect x="-3" y="-52" width="6" height="12" rx="3" fill="#FFC907" transform="rotate(45)"/><rect x="-3" y="-52" width="6" height="12" rx="3" fill="#FFC907" transform="rotate(90)"/><rect x="-3" y="-52" width="6" height="12" rx="3" fill="#FFC907" transform="rotate(135)"/><rect x="-3" y="-52" width="6" height="12" rx="3" fill="#FFC907" transform="rotate(180)"/><rect x="-3" y="-52" width="6" height="12" rx="3" fill="#FFC907" transform="rotate(225)"/><rect x="-3" y="-52" width="6" height="12" rx="3" fill="#FFC907" transform="rotate(270)"/><rect x="-3" y="-52" width="6" height="12" rx="3" fill="#FFC907" transform="rotate(315)"/><circle r="34" fill="#FFC907"/></g>
+<g transform="translate(150,300)">
+  <rect x="-30" y="60" width="60" height="70" rx="16" fill="#FF902A"/>
+  <circle cx="0" cy="30" r="26" fill="#7a4a28"/>
+  <path d="M-18,28 a18,13 0 0 1 36,0 Z" fill="#4a2c18"/>
+  <path d="M-9,34 q9,9 18,0" stroke="#3a2414" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+<g transform="translate(330,300)">
+  <rect x="-30" y="60" width="60" height="70" rx="16" fill="#4FCB53"/>
+  <circle cx="0" cy="30" r="26" fill="#9b6b45"/>
+  <path d="M-18,28 a18,13 0 0 1 36,0 Z" fill="#3a2414"/>
+  <path d="M-9,34 q9,9 18,0" stroke="#3a2414" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+<g transform="translate(500,300)">
+  <rect x="-30" y="60" width="60" height="70" rx="16" fill="#F16061"/>
+  <circle cx="0" cy="30" r="26" fill="#6b4226"/>
+  <path d="M-18,28 a18,13 0 0 1 36,0 Z" fill="#2a1c10"/>
+  <path d="M-9,34 q9,9 18,0" stroke="#3a2414" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+<!-- shared desk -->
+<rect x="80" y="400" width="480" height="26" rx="6" fill="#FFC907"/>
+<rect x="100" y="426" width="14" height="60" fill="#c79a2a"/>
+<rect x="526" y="426" width="14" height="60" fill="#c79a2a"/>
+<!-- open book + pencil -->
+<g transform="translate(300,392)">
+  <path d="M0,0 L34,-6 L34,8 L0,12 Z" fill="#ffffff"/>
+  <path d="M0,0 L-34,-6 L-34,8 L0,12 Z" fill="#eef3f7"/>
+  <rect x="42" y="-10" width="40" height="6" rx="3" fill="#F5402C" transform="rotate(-12 42 -10)"/>
+</g>
+
+</svg>

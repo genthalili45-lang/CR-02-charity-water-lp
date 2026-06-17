@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#8BD1CB"/><stop offset="1" stop-color="#5cb8b1"/>
+</linearGradient>
+</defs>
+<rect width="320" height="280" fill="url(#sky)"/>
+
+<path transform="translate(60,60) scale(1.0)" d="M0,-26 C16,-6 22,2 22,12 A22,22 0 1 1 -22,12 C-22,2 -16,-6 0,-26 Z" fill="#ffffff" opacity="0.5"/>
+<g transform="translate(160,120)">
+  <path d="M-34,-30 L34,-30 L26,80 L-26,80 Z" fill="#ffffff" opacity="0.95"/>
+  <path d="M-29,6 L29,6 L24,76 L-24,76 Z" fill="#2E9DF7"/>
+  <ellipse cx="0" cy="6" rx="29" ry="7" fill="#8BD1CB"/>
+</g>
+<!-- hand -->
+<g transform="translate(160,210)">
+  <rect x="-40" y="0" width="80" height="34" rx="17" fill="#8a5a34"/>
+  <rect x="-30" y="-14" width="14" height="26" rx="7" fill="#8a5a34"/>
+  <rect x="-10" y="-18" width="14" height="30" rx="7" fill="#8a5a34"/>
+  <rect x="10" y="-16" width="14" height="28" rx="7" fill="#8a5a34"/>
+</g>
+
+</svg>
