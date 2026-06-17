@@ -1,248 +1,223 @@
-<<<<<<< HEAD
-charity: water
-The crisis How to help Take action
-Give Water
-For students who want to change something real
-
-Your generation can end
-the water crisis.
-703 million people are still waiting for clean water. That's a problem big enough to matter — and small enough to solve in our lifetime.
-
-Donate now Learn the story
-703M people live without clean water
-1 in 10 people on Earth are affected
-100% of public donations fund clean water
-A young person collecting water from a well
-The problem
-
-Every day, women and kids walk for water.
-In many communities, the nearest water source is hours away — and the water isn't even clean. That walk steals time from school, work, and dreams. It's a cycle that keeps whole communities stuck.
-
-But clean water flips everything. Kids go back to class. Parents start businesses. Health improves overnight. One well can rewrite the future of an entire village.
-
-See how you can help →
-Why clean water changes everything
-One well sets off a ripple effect across an entire community.
-
-📚
-Education
-Kids stop hauling water for hours and get back into the classroom.
-
-❤️
-Health
-Safe water means fewer illnesses and healthier families overnight.
-
-⏳
-Time
-Hours once spent walking become time for school, work, and rest.
-
-🌱
-Opportunity
-With water close by, people can farm, earn, and build a future.
-
-Three ways to make waves
-You don't need a huge budget — just a little momentum.
-
-💧
-Donate
-Every $40 can bring one person clean water. Skip a few coffee runs and fund a fresh start.
-<link rel="stylesheet" href="styles.css" />
-🎉
-Start a campaign
-Turn your birthday, a club event, or a 5K into a fundraiser your whole campus can rally behind.
-
-📣
-Spread the word
-Share the story online. Awareness travels fast when students post, tag, and talk about it.
-
-Ready to be the generation that ends it?
-Your gift goes straight to clean water projects — and you'll see exactly where it lands.
-
-Give clean water
-charity: water
-
-Student project landing page. charity: water is a registered nonprofit bringing clean and safe water to people around the world.
-=======
 <!DOCTYPE html>
-<!-- ============================================================
-     charity: water — Landing Page
-     Target audience: college students ("The Activist Student")
-     Built with plain HTML + CSS so it's easy to read and edit.
-     ============================================================ -->
+<!--
+  ============================================================
+  charity: water — Landing Page
+  ------------------------------------------------------------
+  This page is built with plain HTML + CSS so it's easy to read
+  and edit. The page is split into clearly labeled SECTIONS:
+    1. Navigation bar
+    2. Hero (the big headline at the top)
+    3. Stats band
+    4. The Crisis (story section)
+    5. How you can help (3 cards)
+    6. Final call-to-action
+    7. Footer
+
+  All the styling lives in style.css.
+
+  >> SWAPPING IN YOUR OWN IMAGES <<
+  This page uses temporary photos from the web so it looks
+  finished right away. To use YOUR images instead:
+    1. Put your image files inside a folder named "img"
+    2. Replace the long https://... links below with, e.g.,
+       img/hero.jpg  or  img/well.jpg
+  ============================================================
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- This meta tag makes the page responsive on phones -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>charity: water — Join the Movement</title>
+  <title>charity: water — Clean Water Changes Everything</title>
 
-  <!-- Google Fonts: Montserrat is a free, clean stand-in for charity: water's brand font -->
+  <!--
+    Google Fonts.
+    charity: water's real brand fonts are Proxima Nova + Avenir, but those
+    are paid fonts that can't load for free on GitHub Pages. So we load two
+    free fonts that look very close: Montserrat (like Proxima Nova) for
+    headlines, and Nunito Sans (like Avenir) for body text. In style.css the
+    font list still tries the real brand fonts first, then falls back to these.
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-  <!-- Link to our stylesheet -->
+  <!-- Our stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- ============================================================
-       HEADER  (logo + donate button)
-       ============================================================ -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <!-- Text logo. To use the official logo instead, replace the
-           <a> below with: <img src="img/logo.png" alt="charity: water" class="logo-img" /> -->
-      <a href="#top" class="logo">charity<span class="logo-colon">:</span> water</a>
+  <!-- ========== 1. NAVIGATION ========== -->
+  <header class="navbar">
+    <a href="#top" class="logo">charity<span class="logo-colon">:</span> water</a>
 
-      <nav class="nav">
-        <a href="#story" class="nav-link">The Crisis</a>
-        <a href="#help" class="nav-link">How to Help</a>
-        <a href="#donate" class="btn btn-donate-small">Donate</a>
-      </nav>
-    </div>
+    <nav class="nav-links">
+      <a href="#crisis">The crisis</a>
+      <a href="#help">How to help</a>
+      <a href="#act">Take action</a>
+    </nav>
+
+    <a href="#act" class="btn btn-yellow nav-btn">Give Water</a>
   </header>
 
-  <!-- ============================================================
-       HERO  (the first thing visitors see)
-       ============================================================ -->
+
+  <!-- ========== 2. HERO ========== -->
   <section class="hero" id="top">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">100% of your donation funds clean water</p>
-        <h1 class="hero-title">Don't just give.<br />See exactly where it goes.</h1>
-        <p class="hero-sub">
-          Every project is tracked with GPS coordinates and real photos from the
-          field — so you can stand behind measurable impact, not a guess.
-        </p>
-        <div class="hero-actions">
-          <a href="#donate" class="btn btn-primary">Donate now</a>
-          <a href="#story" class="btn btn-secondary">See the crisis</a>
-        </div>
-      </div>
+    <div class="hero-overlay">
+      <p class="eyebrow">For students who want to change something real</p>
 
-      <div class="hero-image">
-        <!-- Replace with your own photo in the img/ folder -->
-        <img src="img/hero-student.svg" alt="A student smiling in her classroom" />
+      <h1 class="hero-title">
+        Your generation can end<br />the water crisis.
+      </h1>
+
+      <p class="hero-subtitle">
+        703 million people are still waiting for clean water. That's a problem
+        big enough to matter — and small enough to solve in our lifetime.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#act" class="btn btn-yellow">Donate now</a>
+        <a href="#crisis" class="btn btn-outline">Learn the story</a>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       STATS BAND  (quick, punchy numbers)
-       ============================================================ -->
+
+  <!-- ========== 3. STATS BAND ========== -->
   <section class="stats">
-    <div class="container stats-inner">
-      <div class="stat">
-        <span class="stat-number">1 in 10</span>
-        <span class="stat-label">people lack access to clean water</span>
+    <div class="stat">
+      <span class="stat-number">703M</span>
+      <span class="stat-label">people live without clean water</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">1 in 10</span>
+      <span class="stat-label">people on Earth are affected</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">100%</span>
+      <span class="stat-label">of public donations fund clean water</span>
+    </div>
+  </section>
+
+
+  <!-- ========== 4. THE CRISIS (STORY) ========== -->
+  <section class="crisis" id="crisis">
+    <div class="crisis-image">
+      <!-- Replace this with your own photo: img/your-photo.jpg -->
+      <img
+        src="https://images.unsplash.com/photo-1538300342682-cf57afb97285?auto=format&fit=crop&w=900&q=80"
+        alt="A young person collecting water from a well"
+      />
+    </div>
+
+    <div class="crisis-text">
+      <p class="eyebrow eyebrow-dark">The problem</p>
+      <h2>Every day, women and kids walk for water.</h2>
+      <p>
+        In many communities, the nearest water source is hours away — and the
+        water isn't even clean. That walk steals time from school, work, and
+        dreams. It's a cycle that keeps whole communities stuck.
+      </p>
+      <p>
+        But clean water flips everything. Kids go back to class. Parents start
+        businesses. Health improves overnight. One well can rewrite the future
+        of an entire village.
+      </p>
+      <a href="#help" class="text-link">See how you can help &rarr;</a>
+    </div>
+  </section>
+
+
+  <!-- ========== 4.5 WHY CLEAN WATER (HIGHLIGHT STRIP) ========== -->
+  <section class="why">
+    <h2 class="why-heading">Why clean water changes everything</h2>
+    <p class="why-sub">One well sets off a ripple effect across an entire community.</p>
+
+    <div class="why-points">
+      <div class="why-point">
+        <span class="why-emoji">📚</span>
+        <h3>Education</h3>
+        <p>Kids stop hauling water for hours and get back into the classroom.</p>
       </div>
-      <div class="stat">
-        <span class="stat-number">100%</span>
-        <span class="stat-label">of donations fund water projects</span>
+      <div class="why-point">
+        <span class="why-emoji">❤️</span>
+        <h3>Health</h3>
+        <p>Safe water means fewer illnesses and healthier families overnight.</p>
       </div>
-      <div class="stat">
-        <span class="stat-number">GPS</span>
-        <span class="stat-label">tracked, with photos from the field</span>
+      <div class="why-point">
+        <span class="why-emoji">⏳</span>
+        <h3>Time</h3>
+        <p>Hours once spent walking become time for school, work, and rest.</p>
+      </div>
+      <div class="why-point">
+        <span class="why-emoji">🌱</span>
+        <h3>Opportunity</h3>
+        <p>With water close by, people can farm, earn, and build a future.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       STORY  ("Why do YOU matter?")
-       ============================================================ -->
-  <section class="story" id="story">
-    <div class="container story-inner">
-      <div class="story-image">
-        <img src="img/classroom-kids.svg" alt="Students smiling together at their desks" />
-      </div>
-      <div class="story-text">
-        <p class="section-eyebrow">Why do YOU matter?</p>
-        <h2 class="section-title">Students are on the frontline of change.</h2>
-        <p class="story-body">
-          The water crisis is real: 1 in 10 people have no access to clean water.
-          Many kids skip school just to walk for unsafe water to drink.
-        </p>
-        <p class="story-body">
-          Your generation has the energy, the reach, and the chance to help end
-          this — and make history doing it.
-        </p>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============================================================
-       HOW TO HELP  ("Join the movement" cards)
-       ============================================================ -->
+  <!-- ========== 5. HOW YOU CAN HELP ========== -->
   <section class="help" id="help">
-    <div class="container">
-      <p class="section-eyebrow center">Join the movement</p>
-      <h2 class="section-title center">How you can help</h2>
+    <h2 class="section-heading">Three ways to make waves</h2>
+    <p class="section-sub">
+      You don't need a huge budget — just a little momentum.
+    </p>
 
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">☕</div>
-          <h3 class="card-title">Skip a coffee</h3>
-          <p class="card-text">
-            Donate the cost of your daily cup of coffee and fund clean water instead.
-          </p>
-        </div>
+    <div class="cards">
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="card-icon">💧</div>
+        <h3>Donate</h3>
+        <p>
+          Every $40 can bring one person clean water. Skip a few coffee runs and
+          fund a fresh start.
+        </p>
+      </article>
 
-        <div class="card">
-          <div class="card-icon">📣</div>
-          <h3 class="card-title">Share the cause</h3>
-          <p class="card-text">
-            Spread the word to friends and loved ones — awareness turns into action.
-          </p>
-        </div>
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="card-icon">🎉</div>
+        <h3>Start a campaign</h3>
+        <p>
+          Turn your birthday, a club event, or a 5K into a fundraiser your whole
+          campus can rally behind.
+        </p>
+      </article>
 
-        <div class="card">
-          <div class="card-icon">🎓</div>
-          <h3 class="card-title">Start a fundraiser</h3>
-          <p class="card-text">
-            Launch a campus fundraiser and rally your whole community behind it.
-          </p>
-        </div>
-      </div>
+      <!-- Card 3 -->
+      <article class="card">
+        <div class="card-icon">📣</div>
+        <h3>Spread the word</h3>
+        <p>
+          Share the story online. Awareness travels fast when students post,
+          tag, and talk about it.
+        </p>
+      </article>
     </div>
   </section>
 
-  <!-- ============================================================
-       GALLERY  (photo collage from your mockup)
-       ============================================================ -->
-  <section class="gallery">
-    <div class="container">
-      <div class="gallery-grid">
-        <img src="img/gallery-1.svg" alt="A girl holding a glass of clean water" />
-        <img src="img/gallery-2.svg" alt="A woman collecting clean water at a pump" />
-        <img src="img/gallery-3.svg" alt="A child smiling with clean water" />
-        <img src="img/gallery-4.svg" alt="Students learning in class" />
-      </div>
-    </div>
+
+  <!-- ========== 6. FINAL CALL-TO-ACTION ========== -->
+  <section class="cta" id="act">
+    <h2>Ready to be the generation that ends it?</h2>
+    <p>Your gift goes straight to clean water projects — and you'll see exactly where it lands.</p>
+    <a href="https://www.charitywater.org/donate" class="btn btn-dark">Give clean water</a>
   </section>
 
-  <!-- ============================================================
-       FINAL CTA  (the big yellow "do it now" band)
-       ============================================================ -->
-  <section class="cta-band" id="donate">
-    <div class="container cta-inner">
-      <h2 class="cta-title">Ready to change a life today?</h2>
-      <p class="cta-sub">Your donation is fully tracked — see exactly where it goes.</p>
-      <a href="https://www.charitywater.org/donate" class="btn btn-primary btn-large">Donate now</a>
-    </div>
-  </section>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="site-footer">
-    <div class="container">
-      <p class="footer-logo">charity<span class="logo-colon">:</span> water</p>
-      <p class="footer-note">Clean water changes everything. Join the movement.</p>
-    </div>
+  <!-- ========== 7. FOOTER ========== -->
+  <footer class="footer">
+    <p class="footer-logo">charity<span class="logo-colon">:</span> water</p>
+    <p class="footer-note">
+      Student project landing page. charity: water is a registered nonprofit
+      bringing clean and safe water to people around the world.
+    </p>
   </footer>
 
 </body>
 </html>
->>>>>>> 9da3218 (GENT)
