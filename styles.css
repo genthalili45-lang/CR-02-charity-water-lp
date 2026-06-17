@@ -1,198 +1,463 @@
-/* charity: water Brand Colors & Fonts
+/* ============================================================
+   charity: water — Landing Page Styles
+   ------------------------------------------------------------
+   This stylesheet is organized to match the sections in
+   index.html. Read top to bottom:
+     0. Color + font variables
+     1. Base / resets
+     2. Reusable buttons
+     3. Navigation
+     4. Hero
+     5. Stats band
+     6. The crisis (story)
+     7. How you can help (cards)
+     8. Final call-to-action
+     9. Footer
+    10. Responsive (mobile) styles
+   ============================================================ */
 
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
 
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
+/* ========== 0. VARIABLES (brand palette + fonts) ==========
+   Change a color here once and it updates everywhere. */
+:root {
+  /* --- Primary brand colors --- */
+  --yellow: #ffc907;     /* charity: water's signature yellow */
+  --blue:   #2e9df7;     /* primary brand blue */
 
-Fonts:
-- Proxima Nova
-- Avenir
+  /* --- Secondary brand colors (used as small accents) --- */
+  --light-blue:  #8bd1cb;
+  --green:       #4fcb53;
+  --orange:      #ff902a;
+  --red:         #f5402c;
+  --dark-green:  #159a48;
+  --pink:        #f16061;
 
-*/
+  /* --- Neutrals --- */
+  --cream: #fff8e8;      /* soft off-white background */
+  --ink:   #20232b;      /* dark text + dark sections */
+  --white: #ffffff;
 
-/* 
-  Charity: Water Landing Page Styles
-  This CSS uses the provided color palette and beginner-friendly styles.
-*/
+  /* --- Fonts ---
+     We list the real brand fonts FIRST (Proxima Nova / Avenir). If a
+     visitor's device has them, they're used. Otherwise the browser falls
+     back to the free Google Fonts that look almost identical. */
+  --font-display: "proxima-nova", "Proxima Nova", "Montserrat", sans-serif;   /* headlines */
+  --font-body:    "Avenir Next", "Avenir", "Nunito Sans", sans-serif;          /* paragraphs */
+}
 
-/* Set up the main font and background color for the whole page */
-body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+
+/* ========== 1. BASE / RESETS ========== */
+* {
   margin: 0;
   padding: 0;
-  color: #222;
+  box-sizing: border-box; /* makes width/padding math predictable */
 }
 
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
+html {
+  scroll-behavior: smooth; /* smooth scrolling when nav links are clicked */
 }
 
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  line-height: 1.6;
+  background-color: var(--white);
 }
 
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* A small label that sits above headings */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
   letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--yellow);
+  margin-bottom: 0.75rem;
+}
+.eyebrow-dark {
+  color: var(--blue); /* used on light backgrounds where yellow is hard to read */
 }
 
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
 
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
-}
-
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Style the impact story image */
-.impact-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-}
-
-/* Donate Button Styles */
-.donate-button {
+/* ========== 2. REUSABLE BUTTONS ========== */
+.btn {
   display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
+  padding: 14px 30px;
+  border-radius: 40px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
-  border: none;
   cursor: pointer;
+  /* TRANSITION: makes hover effects animate smoothly */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+.btn-yellow {
+  background-color: var(--yellow);
+  color: var(--ink);
+}
+.btn-dark {
+  background-color: var(--ink);
+  color: var(--white);
+}
+.btn-outline {
+  background-color: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
 }
 
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
+/* TRANSFORM: lift the button up slightly on hover */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+.btn-outline:hover {
+  background-color: var(--white);
+  color: var(--ink);
 }
 
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
-*/
 
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
-@media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
+/* ========== 3. NAVIGATION ========== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 6%;
+  background-color: var(--white);
+  position: sticky;   /* stays at the top as you scroll */
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.logo-colon {
+  color: var(--yellow); /* the yellow colon is part of the brand */
+}
+
+.nav-links a {
+  margin: 0 16px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.nav-btn {
+  padding: 10px 24px; /* slightly smaller button in the nav */
+}
+
+
+/* ========== 4. HERO ========== */
+.hero {
+  /* The dark gradient sits ON TOP of the photo so white text is readable.
+     Replace the image URL with your own: img/hero.jpg */
+  background-image:
+    linear-gradient(rgba(26, 34, 56, 0.65), rgba(26, 34, 56, 0.65)),
+    url("https://images.unsplash.com/photo-1594398901394-4e34939a4fd0?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  text-align: center;
+  padding: 120px 6%;
+}
+
+.hero-overlay {
+  max-width: 760px;
+  margin: 0 auto; /* centers the hero text */
+}
+
+.hero-title {
+  color: var(--white);
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap; /* buttons stack neatly on small screens */
+}
+
+
+/* ========== 5. STATS BAND ========== */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 60px 6%;
+  text-align: center;
+}
+
+.stat {
+  flex: 1;
+  min-width: 200px;
+}
+.stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3rem;
+  color: var(--yellow);
+}
+.stat-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.05rem;
+}
+
+
+/* ========== 6. THE CRISIS (STORY) ========== */
+.crisis {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 6%;
+}
+
+.crisis-image {
+  flex: 1;
+  min-width: 300px;
+}
+.crisis-image img {
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.crisis-text {
+  flex: 1;
+  min-width: 300px;
+}
+.crisis-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.crisis-text p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.text-link:hover {
+  transform: translateX(5px); /* arrow nudges to the right */
+}
+
+
+/* ========== 6.5 WHY CLEAN WATER (HIGHLIGHT STRIP) ========== */
+.why {
+  background-color: var(--light-blue); /* soft secondary brand color */
+  padding: 80px 6%;
+  text-align: center;
+}
+.why-heading {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+.why-sub {
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 3rem;
+}
+
+.why-points {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.why-point {
+  flex: 1;
+  min-width: 200px;
+  max-width: 240px;
+}
+.why-emoji {
+  font-size: 2.6rem;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.why-point h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+.why-point p {
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+
+
+/* ========== 7. HOW YOU CAN HELP (CARDS) ========== */
+.help {
+  background-color: var(--cream);
+  padding: 90px 6%;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+.section-sub {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #555;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 40px 30px;
+  flex: 1;
+  min-width: 260px;
+  max-width: 340px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border-top: 6px solid var(--blue); /* default accent; overridden below */
+  /* TRANSITION so the hover lift below animates smoothly */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+/* Give each of the three cards a different secondary brand color on top */
+.card:nth-child(1) { border-top-color: var(--blue); }
+.card:nth-child(2) { border-top-color: var(--green); }
+.card:nth-child(3) { border-top-color: var(--orange); }
+/* TRANSFORM: cards lift and grow slightly on hover */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+.card p {
+  color: #555;
+}
+
+
+/* ========== 8. FINAL CALL-TO-ACTION ========== */
+.cta {
+  background-color: var(--yellow);
+  text-align: center;
+  padding: 90px 6%;
+}
+.cta h2 {
+  font-size: 2.4rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.cta p {
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ========== 9. FOOTER ========== */
+.footer {
+  background-color: var(--ink);
+  color: var(--white);
+  text-align: center;
+  padding: 50px 6%;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.footer-note {
+  font-size: 0.9rem;
+  color: #c7c9d1;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+/* ========== 10. RESPONSIVE (MOBILE) STYLES ==========
+   These rules only apply on screens narrower than 768px.
+   They make text smaller and stack things vertically. */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide the middle menu on small phones to keep it clean */
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
   .hero {
-    padding: 32px 8px;
-    font-size: 1em;
+    padding: 90px 6%;
   }
 
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
+  .crisis-text h2,
+  .section-heading,
+  .why-heading,
+  .cta h2 {
+    font-size: 1.8rem;
   }
 
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
-  }
-
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
-  }
-
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
-  }
-}
-
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .impact-image {
-    width: 300px;
+  .stat-number {
+    font-size: 2.4rem;
   }
 }
